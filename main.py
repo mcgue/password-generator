@@ -8,17 +8,15 @@ import string as str
 # Create string with all acceptable characters
 acceptable_characters = str.ascii_letters + str.digits + str.punctuation
 
-def generatepassword(max, min):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Here is your password with a maximum length of {max}')
-    print(f'Here is your password with a minimum length of {min}')
+def generatepassword(length):
+
     new_letter = random.choice(acceptable_characters)
+    print(f'Here is your password of length {length}')
     print(new_letter)
 # Main
 if __name__ == '__main__':
     # Get parameters
-    print("This is a password generator. Answer the following questions...")
+    print("This is a password generator.")
     time.sleep(1)
-    max_length = input("What is the maximum length? ")
-    min_length = input("What is the minimum length? ")
-    generatepassword(max_length, min_length)
+    length = input("What length password do you want? ")
+    generatepassword(length)
