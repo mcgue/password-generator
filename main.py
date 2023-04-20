@@ -6,12 +6,21 @@ import random
 import string as str
 
 # Create string with all acceptable characters
-acceptable_characters = str.ascii_letters + str.digits + str.punctuation
+letters = str.ascii_letters
+digits = str.digits
+punctuation = str.punctuation
+acceptable_characters = letters + digits + punctuation
 
+# Returns random password
 def generatepassword(length):
+    password_new = ""
+    # Loop through to create password
+    for x in range(0,int(length)):
+        new_letter = random.choice(acceptable_characters)
+        password_new += new_letter
 
-    new_letter = random.choice(acceptable_characters)
-    print(f'Here is your password of length {length}')
+    return password_new
+
     print(new_letter)
 # Main
 if __name__ == '__main__':
@@ -19,4 +28,4 @@ if __name__ == '__main__':
     print("This is a password generator.")
     time.sleep(1)
     length = input("What length password do you want? ")
-    generatepassword(length)
+    print(generatepassword(length))
